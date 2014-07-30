@@ -92,7 +92,7 @@ ausführen.
  **Bei diesem Build werden alle Tests durchlaufen!**
 
 
- Starten der Anwendung
- =====================
+Starten der Anwendung
+=====================
 
 "ars-backend-ear\target\ars-backend-1.0.0.ear" in das Deployment-Verzeichnis des Wildfly kopieren
