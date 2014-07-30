@@ -19,8 +19,8 @@ grant all on ars.* to 'ars'@'localhost';
 grant all on ars_test.* to 'ars'@'localhost';
 ```
 
-- "ars-backend-jboss-dist\schema.sql" in die Datenbank importieren
-- "ars-backend-jboss-dist\data.sql" in die Datenbank importieren (beinhaltet ein paar User, Flugzeuge, Flugzeugtypen und Lizenzen)
+- "ars-backend-jboss-dist\src\main\resources\schema.sql" in die Datenbank importieren
+- "ars-backend-jboss-dist\src\main\resources\data.sql" in die Datenbank importieren (beinhaltet ein paar User, Flugzeuge, Flugzeugtypen und Lizenzen)
 
 Vorbereiten des Wildfly
 -----------------------
@@ -84,7 +84,6 @@ Vorausetzungen
 
 Build starten
 -------------
-In Projekt "ars-backend"
 
 	mvn clean install 
 
