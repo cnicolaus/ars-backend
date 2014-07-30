@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.prodyna.pac.ars</groupId>
+		<artifactId>ars-backend-air</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<groupId>com.prodyna.pac.ars.air</groupId>
+	<artifactId>ars-backend-air-impl</artifactId>
+	<name>ars-backend-air-impl</name>
+	<packaging>ejb</packaging>
+	<dependencies>
+
+		<dependency>
+			<groupId>com.prodyna.pac.ars.air</groupId>
+			<artifactId>ars-backend-air-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.prodyna.pac.ars.user</groupId>
+			<artifactId>ars-backend-user-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.prodyna.pac.ars</groupId>
+			<artifactId>ars-backend-common</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.prodyna.pac.ars</groupId>
+			<artifactId>ars-backend-monitoring</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.prodyna.pac.ars</groupId>
+			<artifactId>ars-backend-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.prodyna.pac.ars.user</groupId>
+			<artifactId>ars-backend-user-impl</artifactId>
+			<type>ejb</type>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>

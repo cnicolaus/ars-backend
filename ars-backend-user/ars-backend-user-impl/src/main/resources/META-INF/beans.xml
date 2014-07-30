@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<beans xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://jboss.org/schema/cdi/beans_1_0.xsd">
+
+	<interceptors>
+		<class>com.prodyna.pac.ars.backend.common.logging.MethodCallLoggingInterceptor</class>
+		<class>com.prodyna.pac.ars.backend.monitoring.methodcall.mbean.MonitoredMethodCallInterceptor</class>
+	</interceptors>
+
+	<alternatives>
+		<class>com.prodyna.pac.ars.backend.user.service.AuthenticatedUserServiceBean</class>
+	</alternatives>
+
+</beans>

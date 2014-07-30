@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.prodyna.pac</groupId>
+	<artifactId>ars</artifactId>
+	<version>1.0.0</version>
+	<name>ars</name>
+	<packaging>pom</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.shrinkwrap>1.1.1</version.shrinkwrap>
+		<version.arquillian>1.1.1.Final</version.arquillian>
+	</properties>
+	<modules>
+		<module>ars-backend-ear</module>
+		<module>ars-backend-common</module>
+		<module>ars-backend-web</module>
+		<module>ars-backend-common-client</module>
+		<module>ars-backend-user</module>
+		<module>ars-backend-test</module>
+		<module>ars-backend-air</module>
+		<module>ars-backend-monitoring</module>
+		<module>ars-backend-assembly</module>
+		<module>ars-backend-reservation</module>
+		<module>ars-backend-jboss-dist</module>
+	</modules>
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-reservation-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-monitoring</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars.user</groupId>
+				<artifactId>ars-backend-user-impl</artifactId>
+				<version>${project.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-common-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars.air</groupId>
+				<artifactId>ars-backend-air-client</artifactId>
+				<version>${project.version}</version>
+
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars.user</groupId>
+				<artifactId>
+				ars-backend-user-client
+			</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars.reservation</groupId>
+				<artifactId>
+				ars-backend-reservation-client
+			</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.prodyna.pac.ars.air</groupId>
+				<artifactId>ars-backend-air-impl</artifactId>
+				<type>ejb</type>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars.user</groupId>
+				<artifactId>ars-backend-user-impl</artifactId>
+				<type>ejb</type>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars.reservation</groupId>
+				<artifactId>ars-backend-reservation-impl</artifactId>
+				<type>ejb</type>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-web</artifactId>
+				<type>war</type>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-web</artifactId>
+				<type>war</type>
+				<version>${project.version}</version>
+			</dependency>
+			<!-- JEE spec -->
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-7.0</artifactId>
+				<version>1.0.0.Final</version>
+				<type>pom</type>
+				<scope>provided</scope>
+			</dependency>
+
+
+			<!-- dependencies provided by wildfly -->
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-jaxrs</artifactId>
+				<version>3.0.2.Final</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+			<!-- sources -->
+			<dependency>
+				<groupId>com.prodyna.pac.ars.air</groupId>
+				<artifactId>ars-backend-air-impl</artifactId>
+				<type>ejb</type>
+				<version>${project.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+
+			<dependency>
+				<groupId>com.prodyna.pac.ars.air</groupId>
+				<artifactId>ars-backend-air-client</artifactId>
+				<version>${project.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-common</artifactId>
+				<version>${project.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-common-client</artifactId>
+				<version>${project.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars.reservation</groupId>
+				<artifactId>
+				ars-backend-reservation-client
+			</artifactId>
+				<version>${project.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-monitoring</artifactId>
+				<type>ejb</type>
+				<version>${project.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+
+			<dependency>
+				<groupId>com.prodyna.pac.ars.user</groupId>
+				<artifactId>ars-backend-user-client</artifactId>
+				<version>${project.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars.user</groupId>
+				<artifactId>ars-backend-user-impl</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+				<classifier>sources</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars.reservation</groupId>
+				<artifactId>ars-backend-reservation-impl</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+				<classifier>sources</classifier>
+			</dependency>
+
+
+			<!-- test dependencies -->
+
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-test</artifactId>
+				<version>${project.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-ear</artifactId>
+				<type>ear</type>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.prodyna.pac.ars</groupId>
+				<artifactId>ars-backend-jboss-dist</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+				<scope>test</scope>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>1.1.4.Final</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>wildfly-arquillian-container-remote</artifactId>
+				<version>8.0.0.Final</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.arquillian.extension</groupId>
+				<artifactId>arquillian-rest-client-impl-3x</artifactId>
+				<version>1.0.0.Alpha3</version>
+				<scope>test</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.6.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JEE spec -->
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-7.0</artifactId>
+			<type>pom</type>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.arquillian.junit</groupId>
+			<artifactId>arquillian-junit-container</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.wildfly</groupId>
+			<artifactId>wildfly-arquillian-container-remote</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.arquillian.extension</groupId>
+			<artifactId>arquillian-rest-client-impl-3x</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.arquillian.protocol</groupId>
+			<artifactId>arquillian-protocol-servlet</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+			<plugins>
+				<plugin>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<ejbVersion>3.2</ejbVersion>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.17</version>
+					<configuration>
+						<skipTests>false</skipTests>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+
+			</plugins>
+
+	</build>
+
+</project>
