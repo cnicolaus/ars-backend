@@ -96,3 +96,7 @@ Starten der Anwendung
 =====================
 
 "ars-backend-ear\target\ars-backend-1.0.0.ear" in das Deployment-Verzeichnis des Wildfly kopieren
+
+Entwicklung
+===========
+siehe /architektur.pdf
